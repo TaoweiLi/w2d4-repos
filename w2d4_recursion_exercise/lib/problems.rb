@@ -111,6 +111,7 @@ end
 #     1-dimensional array: ['some data']
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
+
 def flatten(data)
   return [data] if !data.kind_of?(Array)
 
@@ -121,5 +122,3 @@ def flatten(data)
 
   return flatten_arr
 end
-
-
