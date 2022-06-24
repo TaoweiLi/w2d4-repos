@@ -108,7 +108,10 @@ class Hash
   # hash_2.my_select                            # => {4=>4}
 
   def my_select(&prc)
-    prc ||= Proc.new { |k, v| k == v }
+    if prc.nil?
+       prc = Proc.new { |k, v| k == v }
+    end   
+  
     new_hash = {}
 
     self.each do |k, v|
